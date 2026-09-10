@@ -1,0 +1,705 @@
+{
+  "skill": "a7",
+  "product": "API7 Enterprise Edition",
+  "generated_from": "https://github.com/api7/a7",
+  "entries": [
+    {
+      "id": "developer",
+      "category": "persona",
+      "title": "developer persona",
+      "path": "references/personas/developer.md",
+      "description": "Persona skill for API developers building and testing APIs on API7 Enterprise Edition (API7 EE) using the a7 CLI. Provides decision frameworks for service-backed API design, route configuration, plugin configuration, and local-to-cloud development workflows.",
+      "plugin_name": null,
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 service create",
+        "a7 consumer create",
+        "a7 config sync",
+        "a7 config validate",
+        "a7 debug trace"
+      ],
+      "legacy_name": "a7-persona-developer",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-persona-developer/SKILL.md"
+    },
+    {
+      "id": "operator",
+      "category": "persona",
+      "title": "operator persona",
+      "path": "references/personas/operator.md",
+      "description": "Persona skill for platform operators and DevOps engineers managing API7 Enterprise Edition (API7 EE) instances using the a7 CLI. Provides decision frameworks for managing Gateway Groups, Enterprise RBAC, complex deployments, troubleshooting, and disaster recovery.",
+      "plugin_name": null,
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 gateway-group list",
+        "a7 gateway-group create",
+        "a7 route list",
+        "a7 service list",
+        "a7 config sync",
+        "a7 config dump",
+        "a7 debug logs",
+        "a7 debug trace"
+      ],
+      "legacy_name": "a7-persona-operator",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-persona-operator/SKILL.md"
+    },
+    {
+      "id": "ai-content-moderation",
+      "category": "plugin",
+      "title": "ai-content-moderation plugin",
+      "path": "references/plugins/ai-content-moderation.md",
+      "description": "Skill for configuring API7 Enterprise Edition AI content moderation plugins via the a7 CLI. Covers both ai-aws-content-moderation (AWS Comprehend, request-only) and ai-aliyun-content-moderation (Aliyun, request + response with streaming), toxicity thresholds, category filtering, and integration with ai-proxy.",
+      "plugin_name": "ai-aws-content-moderation",
+      "apisix_version": ">=3.9.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 service create",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-ai-content-moderation",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-ai-content-moderation/SKILL.md"
+    },
+    {
+      "id": "ai-prompt-decorator",
+      "category": "plugin",
+      "title": "ai-prompt-decorator plugin",
+      "path": "references/plugins/ai-prompt-decorator.md",
+      "description": "Skill for configuring the API7 Enterprise Edition ai-prompt-decorator plugin via the a7 CLI. Covers prepending and appending system/user/assistant messages to LLM requests, setting conversation context, and enforcing safety guidelines.",
+      "plugin_name": "ai-prompt-decorator",
+      "apisix_version": ">=3.9.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 service create",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-ai-prompt-decorator",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-ai-prompt-decorator/SKILL.md"
+    },
+    {
+      "id": "ai-prompt-template",
+      "category": "plugin",
+      "title": "ai-prompt-template plugin",
+      "path": "references/plugins/ai-prompt-template.md",
+      "description": "Skill for configuring the API7 Enterprise Edition ai-prompt-template plugin via the a7 CLI. Covers defining reusable prompt templates with variable placeholders, enforcing prompt structure, and combining with ai-proxy for a complete AI gateway pipeline.",
+      "plugin_name": "ai-prompt-template",
+      "apisix_version": ">=3.9.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 service create",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-ai-prompt-template",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-ai-prompt-template/SKILL.md"
+    },
+    {
+      "id": "ai-proxy",
+      "category": "plugin",
+      "title": "ai-proxy plugin",
+      "path": "references/plugins/ai-proxy.md",
+      "description": "Skill for configuring the API7 Enterprise Edition ai-proxy plugin via the a7 CLI. Covers proxying requests to LLM providers (OpenAI, Azure OpenAI, DeepSeek, Anthropic, Gemini, Vertex AI, Amazon Bedrock, and more), authentication per provider, model configuration, streaming, logging, and route/service usage.",
+      "plugin_name": "ai-proxy",
+      "apisix_version": ">=3.9.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 service create",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-ai-proxy",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-ai-proxy/SKILL.md"
+    },
+    {
+      "id": "basic-auth",
+      "category": "plugin",
+      "title": "basic-auth plugin",
+      "path": "references/plugins/basic-auth.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) basic-auth plugin via the a7 CLI. Covers HTTP Basic Authentication setup on routes, consumer credential binding with username/password, hide_credentials, anonymous consumer fallback, and common operational patterns.",
+      "plugin_name": "basic-auth",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 consumer create",
+        "a7 consumer update"
+      ],
+      "legacy_name": "a7-plugin-basic-auth",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-basic-auth/SKILL.md"
+    },
+    {
+      "id": "consumer-restriction",
+      "category": "plugin",
+      "title": "consumer-restriction plugin",
+      "path": "references/plugins/consumer-restriction.md",
+      "description": "Skill for configuring the API7 Enterprise Edition consumer-restriction plugin via the a7 CLI. Covers restricting access by consumer name, service ID, or route ID using whitelist/blacklist modes and per-consumer HTTP method restrictions.",
+      "plugin_name": "consumer-restriction",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 consumer create",
+        "a7 consumer update",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-consumer-restriction",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-consumer-restriction/SKILL.md"
+    },
+    {
+      "id": "cors",
+      "category": "plugin",
+      "title": "cors plugin",
+      "path": "references/plugins/cors.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) cors plugin via the a7 CLI. Covers Cross-Origin Resource Sharing setup on routes, allow_origins, allow_methods, allow_headers, credentials handling, regex origin matching, preflight caching, and common operational patterns.",
+      "plugin_name": "cors",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update"
+      ],
+      "legacy_name": "a7-plugin-cors",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-cors/SKILL.md"
+    },
+    {
+      "id": "datadog",
+      "category": "plugin",
+      "title": "datadog plugin",
+      "path": "references/plugins/datadog.md",
+      "description": "Skill for configuring the API7 Enterprise Edition datadog plugin via the a7 CLI. Covers pushing custom metrics to Datadog via DogStatsD, metric tags, batching, plugin metadata for global DogStatsD server config, and Datadog Agent integration.",
+      "plugin_name": "datadog",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-datadog",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-datadog/SKILL.md"
+    },
+    {
+      "id": "ext-plugin",
+      "category": "plugin",
+      "title": "ext-plugin plugin",
+      "path": "references/plugins/ext-plugin.md",
+      "description": "Skill for configuring the API7 Enterprise Edition external plugin system (ext-plugin-pre-req, ext-plugin-post-req, ext-plugin-post-resp) via the a7 CLI. Covers Plugin Runner architecture, configuration for Go/Java/Python runners, RPC protocol, graceful degradation, and performance considerations.",
+      "plugin_name": "ext-plugin-pre-req",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-ext-plugin",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-ext-plugin/SKILL.md"
+    },
+    {
+      "id": "fault-injection",
+      "category": "plugin",
+      "title": "fault-injection plugin",
+      "path": "references/plugins/fault-injection.md",
+      "description": "Skill for configuring the API7 Enterprise Edition fault-injection plugin via the a7 CLI. Covers injecting delays and HTTP aborts for chaos engineering, percentage-based sampling, conditional injection via vars expressions, custom response headers and body with Nginx variable interpolation.",
+      "plugin_name": "fault-injection",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-fault-injection",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-fault-injection/SKILL.md"
+    },
+    {
+      "id": "grpc-transcode",
+      "category": "plugin",
+      "title": "grpc-transcode plugin",
+      "path": "references/plugins/grpc-transcode.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) grpc-transcode plugin via the a7 CLI. Covers converting RESTful HTTP requests to gRPC, proto file management, pb_option settings for data type conversion, error detail decoding, and gateway group scoping.",
+      "plugin_name": "grpc-transcode",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 proto create",
+        "a7 proto list",
+        "a7 proto get",
+        "a7 proto delete",
+        "a7 route create",
+        "a7 route update",
+        "a7 route get"
+      ],
+      "legacy_name": "a7-plugin-grpc-transcode",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-grpc-transcode/SKILL.md"
+    },
+    {
+      "id": "hmac-auth",
+      "category": "plugin",
+      "title": "hmac-auth plugin",
+      "path": "references/plugins/hmac-auth.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) hmac-auth plugin via the a7 CLI. Covers HMAC signature authentication, consumer credential binding with key_id/secret_key, allowed algorithms, clock skew handling, request body validation, signed headers, and common operational patterns.",
+      "plugin_name": "hmac-auth",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 consumer create",
+        "a7 consumer update"
+      ],
+      "legacy_name": "a7-plugin-hmac-auth",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-hmac-auth/SKILL.md"
+    },
+    {
+      "id": "http-logger",
+      "category": "plugin",
+      "title": "http-logger plugin",
+      "path": "references/plugins/http-logger.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) http-logger plugin via the a7 CLI. Covers pushing access logs to HTTP/HTTPS endpoints in batches, custom log formats, and gateway group scoping.",
+      "plugin_name": "http-logger",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-http-logger",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-http-logger/SKILL.md"
+    },
+    {
+      "id": "ip-restriction",
+      "category": "plugin",
+      "title": "ip-restriction plugin",
+      "path": "references/plugins/ip-restriction.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) ip-restriction plugin via the a7 CLI. Covers IP whitelist/blacklist setup on routes, CIDR range support, IPv4/IPv6, real client IP extraction behind proxies, custom error messages, and common operational patterns.",
+      "plugin_name": "ip-restriction",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update"
+      ],
+      "legacy_name": "a7-plugin-ip-restriction",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-ip-restriction/SKILL.md"
+    },
+    {
+      "id": "jwt-auth",
+      "category": "plugin",
+      "title": "jwt-auth plugin",
+      "path": "references/plugins/jwt-auth.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) jwt-auth plugin via the a7 CLI. Covers JWT token authentication, HS256/RS256 algorithm selection, consumer credential binding, token lookup from header/query/cookie, claims handling, clock skew, secret management, and common operational patterns.",
+      "plugin_name": "jwt-auth",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 consumer create",
+        "a7 consumer update"
+      ],
+      "legacy_name": "a7-plugin-jwt-auth",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-jwt-auth/SKILL.md"
+    },
+    {
+      "id": "kafka-logger",
+      "category": "plugin",
+      "title": "kafka-logger plugin",
+      "path": "references/plugins/kafka-logger.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) kafka-logger plugin via the a7 CLI. Covers pushing access logs to Apache Kafka topics, broker configuration, SASL authentication, and gateway group scoping.",
+      "plugin_name": "kafka-logger",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-kafka-logger",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-kafka-logger/SKILL.md"
+    },
+    {
+      "id": "key-auth",
+      "category": "plugin",
+      "title": "key-auth plugin",
+      "path": "references/plugins/key-auth.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) key-auth plugin via the a7 CLI. Covers API key authentication setup on routes, consumer credential binding, key lookup from header/query/cookie, hide_credentials, anonymous consumer fallback, and common operational patterns.",
+      "plugin_name": "key-auth",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 consumer create",
+        "a7 consumer update"
+      ],
+      "legacy_name": "a7-plugin-key-auth",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-key-auth/SKILL.md"
+    },
+    {
+      "id": "limit-count",
+      "category": "plugin",
+      "title": "limit-count plugin",
+      "path": "references/plugins/limit-count.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) limit-count plugin via the a7 CLI. Covers fixed-window rate limiting, count/time_window configuration, key types, Redis and Redis-cluster policies for distributed limiting, group-based shared quotas, consumer-level vs route-level limiting, response headers, and common operational patterns.",
+      "plugin_name": "limit-count",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 consumer create",
+        "a7 consumer update"
+      ],
+      "legacy_name": "a7-plugin-limit-count",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-limit-count/SKILL.md"
+    },
+    {
+      "id": "limit-req",
+      "category": "plugin",
+      "title": "limit-req plugin",
+      "path": "references/plugins/limit-req.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) limit-req plugin via the a7 CLI. Covers leaky-bucket rate limiting, rate/burst configuration, nodelay behavior, key types, Redis policies for distributed limiting, traffic smoothing, and common operational patterns including combination with limit-count.",
+      "plugin_name": "limit-req",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 consumer create",
+        "a7 consumer update"
+      ],
+      "legacy_name": "a7-plugin-limit-req",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-limit-req/SKILL.md"
+    },
+    {
+      "id": "openid-connect",
+      "category": "plugin",
+      "title": "openid-connect plugin",
+      "path": "references/plugins/openid-connect.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) openid-connect plugin via the a7 CLI. Covers OIDC authorization code flow, bearer token validation, token introspection vs JWKS verification, session management, provider setup for Keycloak/Auth0/Okta, redirect URIs, and common operational patterns.",
+      "plugin_name": "openid-connect",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update"
+      ],
+      "legacy_name": "a7-plugin-openid-connect",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-openid-connect/SKILL.md"
+    },
+    {
+      "id": "prometheus",
+      "category": "plugin",
+      "title": "prometheus plugin",
+      "path": "references/plugins/prometheus.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) prometheus plugin via the a7 CLI. Covers enabling Prometheus metrics export on routes and globally, exposed metrics (HTTP status, latency, bandwidth, upstream health), and gateway group scoping.",
+      "plugin_name": "prometheus",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-prometheus",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-prometheus/SKILL.md"
+    },
+    {
+      "id": "proxy-rewrite",
+      "category": "plugin",
+      "title": "proxy-rewrite plugin",
+      "path": "references/plugins/proxy-rewrite.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) proxy-rewrite plugin via the a7 CLI. Covers rewriting request URI, host, method, headers, and scheme before forwarding to upstream. Includes regex URI rewriting, header manipulation, and gateway group scoping.",
+      "plugin_name": "proxy-rewrite",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 route get"
+      ],
+      "legacy_name": "a7-plugin-proxy-rewrite",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-proxy-rewrite/SKILL.md"
+    },
+    {
+      "id": "redirect",
+      "category": "plugin",
+      "title": "redirect plugin",
+      "path": "references/plugins/redirect.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) redirect plugin via the a7 CLI. Covers URI redirects, HTTP-to-HTTPS redirection, regex-based URI rewriting, query string handling, and gateway group scoping.",
+      "plugin_name": "redirect",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 route get"
+      ],
+      "legacy_name": "a7-plugin-redirect",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-redirect/SKILL.md"
+    },
+    {
+      "id": "response-rewrite",
+      "category": "plugin",
+      "title": "response-rewrite plugin",
+      "path": "references/plugins/response-rewrite.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) response-rewrite plugin via the a7 CLI. Covers rewriting response status codes, headers, and body before returning to clients. Includes conditional execution with vars, regex body filters, and gateway group scoping.",
+      "plugin_name": "response-rewrite",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 route get"
+      ],
+      "legacy_name": "a7-plugin-response-rewrite",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-response-rewrite/SKILL.md"
+    },
+    {
+      "id": "serverless",
+      "category": "plugin",
+      "title": "serverless plugin",
+      "path": "references/plugins/serverless.md",
+      "description": "Skill for configuring the API7 Enterprise Edition serverless-pre-function and serverless-post-function plugins via the a7 CLI. Covers inline Lua function execution in configurable request phases, function signature, closure patterns, available Lua APIs, and execution ordering.",
+      "plugin_name": "serverless-pre-function",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 global-rule create",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-serverless",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-serverless/SKILL.md"
+    },
+    {
+      "id": "skywalking",
+      "category": "plugin",
+      "title": "skywalking plugin",
+      "path": "references/plugins/skywalking.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) skywalking plugin via the a7 CLI. Covers distributed tracing with Apache SkyWalking OAP, sampling configuration, service topology, and gateway group scoping.",
+      "plugin_name": "skywalking",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-skywalking",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-skywalking/SKILL.md"
+    },
+    {
+      "id": "traffic-split",
+      "category": "plugin",
+      "title": "traffic-split plugin",
+      "path": "references/plugins/traffic-split.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) traffic-split plugin via the a7 CLI. Covers weighted traffic splitting between upstreams with conditional match rules. Includes canary release, blue-green deployment, A/B testing patterns, and gateway group scoping.",
+      "plugin_name": "traffic-split",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 route get"
+      ],
+      "legacy_name": "a7-plugin-traffic-split",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-traffic-split/SKILL.md"
+    },
+    {
+      "id": "wolf-rbac",
+      "category": "plugin",
+      "title": "wolf-rbac plugin",
+      "path": "references/plugins/wolf-rbac.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) wolf-rbac plugin via the a7 CLI. Covers integration with the Wolf RBAC server for role-based access control, token management, login/user-info/change-password API endpoints, permission checking flow, and multi-application setup.",
+      "plugin_name": "wolf-rbac",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 consumer create",
+        "a7 consumer update",
+        "a7 route create",
+        "a7 route update",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-wolf-rbac",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-wolf-rbac/SKILL.md"
+    },
+    {
+      "id": "zipkin",
+      "category": "plugin",
+      "title": "zipkin plugin",
+      "path": "references/plugins/zipkin.md",
+      "description": "Skill for configuring the API7 Enterprise Edition (API7 EE) zipkin plugin via the a7 CLI. Covers distributed tracing with Zipkin, Jaeger, or any Zipkin-compatible collector, B3 propagation headers, sampling, and gateway group scoping.",
+      "plugin_name": "zipkin",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route create",
+        "a7 route update",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-plugin-zipkin",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-plugin-zipkin/SKILL.md"
+    },
+    {
+      "id": "api-versioning",
+      "category": "recipe",
+      "title": "api versioning recipe",
+      "path": "references/recipes/api-versioning.md",
+      "description": "Recipe skill for implementing API versioning strategies using API7 Enterprise Edition (API7 EE) and the a7 CLI. Covers URI path versioning, header-based versioning, traffic splitting for gradual migration, and version lifecycle management.",
+      "plugin_name": null,
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 service create",
+        "a7 route create",
+        "a7 route update",
+        "a7 route list",
+        "a7 config sync",
+        "a7 gateway-group get"
+      ],
+      "legacy_name": "a7-recipe-api-versioning",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-recipe-api-versioning/SKILL.md"
+    },
+    {
+      "id": "blue-green",
+      "category": "recipe",
+      "title": "blue green recipe",
+      "path": "references/recipes/blue-green.md",
+      "description": "Recipe skill for implementing blue-green deployments using the a7 CLI in API7 Enterprise Edition. Covers creating two service-backed environments, switching traffic via route service_id updates, rollback procedures, and config sync workflows with gateway group scoping.",
+      "plugin_name": null,
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 service create",
+        "a7 route create",
+        "a7 route update",
+        "a7 route get",
+        "a7 config sync",
+        "a7 config diff"
+      ],
+      "legacy_name": "a7-recipe-blue-green",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-recipe-blue-green/SKILL.md"
+    },
+    {
+      "id": "canary",
+      "category": "recipe",
+      "title": "canary recipe",
+      "path": "references/recipes/canary.md",
+      "description": "Recipe skill for implementing canary releases using the a7 CLI in API7 Enterprise Edition. Covers gradual traffic shifting with the traffic-split plugin, header-based canary routing, monitoring checkpoints, and full promotion or rollback workflows.",
+      "plugin_name": null,
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 service create",
+        "a7 service update",
+        "a7 route create",
+        "a7 route update",
+        "a7 route get",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-recipe-canary",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-recipe-canary/SKILL.md"
+    },
+    {
+      "id": "circuit-breaker",
+      "category": "recipe",
+      "title": "circuit breaker recipe",
+      "path": "references/recipes/circuit-breaker.md",
+      "description": "Recipe skill for implementing circuit breaker patterns using the a7 CLI in API7 Enterprise Edition. Covers the api-breaker plugin, unhealthy thresholds, healthy recovery, response code classification, and integration with service health checks.",
+      "plugin_name": "api-breaker",
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 service create",
+        "a7 route create",
+        "a7 route update",
+        "a7 route get",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-recipe-circuit-breaker",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-recipe-circuit-breaker/SKILL.md"
+    },
+    {
+      "id": "graphql-proxy",
+      "category": "recipe",
+      "title": "graphql proxy recipe",
+      "path": "references/recipes/graphql-proxy.md",
+      "description": "Recipe skill for implementing GraphQL proxying patterns using API7 Enterprise Edition (API7 EE) and the a7 CLI. Covers operation-based routing, per-operation rate limiting, REST-to-GraphQL conversion, and enterprise security for GraphQL APIs.",
+      "plugin_name": null,
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 service create",
+        "a7 service get",
+        "a7 route create",
+        "a7 route update",
+        "a7 route get",
+        "a7 consumer create",
+        "a7 credential create",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-recipe-graphql-proxy",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-recipe-graphql-proxy/SKILL.md"
+    },
+    {
+      "id": "health-check",
+      "category": "recipe",
+      "title": "health check recipe",
+      "path": "references/recipes/health-check.md",
+      "description": "Recipe skill for configuring backend health checks using the a7 CLI in API7 Enterprise Edition. Covers active health checks, passive health checks, combining both, healthy/unhealthy thresholds, and service-backed route wiring.",
+      "plugin_name": null,
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 service create",
+        "a7 service get",
+        "a7 route create",
+        "a7 route list",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-recipe-health-check",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-recipe-health-check/SKILL.md"
+    },
+    {
+      "id": "mtls",
+      "category": "recipe",
+      "title": "mtls recipe",
+      "path": "references/recipes/mtls.md",
+      "description": "Recipe skill for configuring mutual TLS (mTLS) using the a7 CLI in API7 Enterprise Edition. Covers SSL certificate management, upstream mTLS to backend services, client certificate verification, and end-to-end mTLS setup from client through API7 EE to upstream.",
+      "plugin_name": null,
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 ssl create",
+        "a7 ssl update",
+        "a7 ssl list",
+        "a7 ssl get",
+        "a7 ssl delete",
+        "a7 service create",
+        "a7 route create"
+      ],
+      "legacy_name": "a7-recipe-mtls",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-recipe-mtls/SKILL.md"
+    },
+    {
+      "id": "multi-tenant",
+      "category": "recipe",
+      "title": "multi tenant recipe",
+      "path": "references/recipes/multi-tenant.md",
+      "description": "Recipe skill for implementing multi-tenant patterns using API7 Enterprise Edition (API7 EE) and the a7 CLI. Covers gateway-group isolation, consumer policies, service-backed tenant routes, and credential-based tenant access.",
+      "plugin_name": null,
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 gateway-group create",
+        "a7 global-rule create",
+        "a7 consumer create",
+        "a7 consumer list",
+        "a7 credential create",
+        "a7 service create",
+        "a7 service get",
+        "a7 route create",
+        "a7 route get",
+        "a7 config sync"
+      ],
+      "legacy_name": "a7-recipe-multi-tenant",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-recipe-multi-tenant/SKILL.md"
+    },
+    {
+      "id": "shared",
+      "category": "shared",
+      "title": "a7 CLI conventions",
+      "path": "references/shared.md",
+      "description": "Core skill for working with the a7 CLI — the command-line tool for API7 Enterprise Edition. Provides project conventions, command patterns, dual-API architecture, and development workflow. Load this skill when working on a7 source code, adding new commands, writing tests, or modifying any a7 component.",
+      "plugin_name": null,
+      "apisix_version": ">=3.0.0",
+      "commands": [
+        "a7 route",
+        "a7 service",
+        "a7 consumer",
+        "a7 ssl",
+        "a7 plugin",
+        "a7 gateway-group",
+        "a7 config",
+        "a7 context"
+      ],
+      "legacy_name": "a7-shared",
+      "source": "https://github.com/api7/a7/blob/master/skills/a7-shared/SKILL.md"
+    }
+  ]
+}

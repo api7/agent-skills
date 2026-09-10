@@ -1,0 +1,16 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Apache APISIX — a6",
+      "description": "Configure and operate the open-source Apache APISIX gateway from your coding agent through the a6 CLI. 29 plugins, 8 operational recipes, 2 personas.",
+      "skills": ["a6"]
+    },
+    {
+      "title": "API7 Enterprise Edition — a7",
+      "description": "Configure and operate API7 Enterprise Edition (API7 Gateway) from your coding agent through the a7 CLI. Gateway-group scoped; 29 plugins, 8 recipes, 2 personas.",
+      "skills": ["a7"]
+    }
+  ]
+}
