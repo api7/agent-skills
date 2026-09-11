@@ -18,6 +18,8 @@ jobs:
           node-version: 22
       - name: Structural validation
         run: node scripts/validate.mjs
+      - name: SKILL.md routing tables match references/index.json
+        run: node scripts/sync-router.mjs --check
       - name: skills CLI discovers exactly a6 and a7
         run: |
           out=$(npx -y skills add . --list 2>&1 | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g')
