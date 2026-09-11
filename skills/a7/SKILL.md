@@ -33,7 +33,9 @@ Read [references/shared.md](references/shared.md) once per session before runnin
 
 ## 2. Pick the reference for the task
 
-Match the user's request against the tables below and read the linked file. Load one plugin or recipe file at a time; add a second only when the task clearly spans both (for example key-auth + limit-count).
+Match the user's request against the tables below and read the linked file. The tables are generated from `references/index.json`; edit that file, not the tables. Load one plugin or recipe file at a time; add a second only when the task clearly spans both (for example key-auth + limit-count).
+
+<!-- routing-tables:start (generated from references/index.json by scripts/sync-router.mjs; do not edit by hand) -->
 
 ### Plugins (29)
 
@@ -88,6 +90,8 @@ Match the user's request against the tables below and read the linked file. Load
 |---|---|---|
 | `developer` | [personas/developer.md](references/personas/developer.md) | API developers building and testing APIs. Provides decision frameworks for service-backed API design, route… |
 | `operator` | [personas/operator.md](references/personas/operator.md) | Platform operators and DevOps engineers managing API7 Enterprise Edition (API7 EE) instances. Provides… |
+
+<!-- routing-tables:end -->
 
 If nothing matches, the request is probably plain resource CRUD (routes, services, upstreams, consumers, SSL, global rules): [references/shared.md](references/shared.md) is sufficient. Machine-readable metadata for every reference is in [references/index.json](references/index.json).
 
