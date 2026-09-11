@@ -7,7 +7,7 @@ Agent skills that teach AI coding agents — Claude Code, Cursor, Codex, GitHub 
 | Skill | Product | CLI | Contents |
 |---|---|---|---|
 | [`a6`](skills/a6/SKILL.md) | [Apache APISIX](https://apisix.apache.org) | [`a6`](https://github.com/api7/a6) | 29 plugins · 8 operational recipes · 2 personas · CLI conventions |
-| [`a7`](skills/a7/SKILL.md) | [API7 Enterprise Edition](https://api7.ai/api7-gateway) | [`a7`](https://github.com/api7/a7) | 29 plugins · 8 operational recipes · 2 personas · CLI conventions |
+| [`a7`](skills/a7/SKILL.md) | [API7 Enterprise Edition](https://api7.ai/enterprise) | [`a7`](https://github.com/api7/a7) | 29 plugins · 8 operational recipes · 2 personas · CLI conventions |
 
 ## Install
 
