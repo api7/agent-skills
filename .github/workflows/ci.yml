@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    - cron: "17 3 * * *" # daily: catch drift between the CLIs and the references
 
 jobs:
   validate:
@@ -23,3 +25,36 @@ jobs:
           echo "$out" | grep -q "Found 2 skills" || { echo "expected exactly 2 skills"; exit 1; }
           echo "$out" | grep -qE "^\s*│\s+a6$" || { echo "a6 not discovered"; exit 1; }
           echo "$out" | grep -qE "^\s*│\s+a7$" || { echo "a7 not discovered"; exit 1; }
+
+  # Every `a6 …` / `a7 …` invocation in the references must exist in the current
+  # CLI. The CLI repositories own that test (test/skills); we run it here against
+  # this checkout so a bad command cannot merge into the references.
+  cli-examples:
+    name: Validate ${{ matrix.cli }} examples against the CLI
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - cli: a6
+            repo: api7/a6
+            ref: main
+          - cli: a7
+            repo: api7/a7
+            ref: master
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check out ${{ matrix.repo }}
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ matrix.repo }}
+          ref: ${{ matrix.ref }}
+          path: cli
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: cli/go.mod
+      - name: go test ./test/skills
+        working-directory: cli
+        env:
+          SKILLS_DIR: ${{ github.workspace }}/skills/${{ matrix.cli }}
+        run: go test ./test/skills -count=1
