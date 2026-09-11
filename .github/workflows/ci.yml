@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate skills
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Structural validation
+        run: node scripts/validate.mjs
+      - name: skills CLI discovers exactly a6 and a7
+        run: |
+          out=$(npx -y skills add . --list 2>&1 | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g')
+          echo "$out"
+          echo "$out" | grep -q "Found 2 skills" || { echo "expected exactly 2 skills"; exit 1; }
+          echo "$out" | grep -qE "^\s*│\s+a6$" || { echo "a6 not discovered"; exit 1; }
+          echo "$out" | grep -qE "^\s*│\s+a7$" || { echo "a7 not discovered"; exit 1; }
