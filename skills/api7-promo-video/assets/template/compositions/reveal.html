@@ -1,0 +1,22 @@
+<template>
+<style>{{STYLE}}</style>
+<div id="root" data-composition-id="reveal" data-width="{{WIDTH}}" data-height="{{HEIGHT}}" data-aspect="{{ASPECT}}">
+  <h1 id="reveal-title" class="headline" data-var-text="reveal">{{REVEAL}}</h1>
+  <div class="stage"><svg viewBox="0 0 864 430" aria-label="Gateway added between incoming requests and upstream">
+    <path class="wire" d="M150 170H714"/>
+    <rect class="node" x="0" y="122" width="160" height="96" rx="12"/><text x="80" y="180" text-anchor="middle" class="label" data-var-text="leftLabel">{{LEFTLABEL}}</text>
+    <rect class="node" x="704" y="122" width="160" height="96" rx="12"/><text x="784" y="180" text-anchor="middle" class="label" data-var-text="rightLabel">{{RIGHTLABEL}}</text>
+    <g id="reveal-gateway"><rect class="gateway" x="322" y="82" width="220" height="176" rx="16"/><image href="assets/brand/{{BRAND_FILE}}" x="397" y="104" width="70" height="64"/><text x="432" y="220" text-anchor="middle" class="label" font-weight="700" data-var-text="gatewayLabel">{{GATEWAYLABEL}}</text></g>
+    <rect id="reveal-request" class="packet" x="176" y="158" width="24" height="24" rx="5"/>
+  </svg></div>
+  <p class="context" data-var-text="context">{{CONTEXT}}</p>
+  <p class="note">Illustrative flow</p>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo('#reveal-title',{opacity:0},{opacity:1,duration:0.22,ease:'power1.out'},0);
+tl.fromTo('#reveal-gateway',{y:45,opacity:0},{y:0,opacity:1,duration:0.5,ease:'power4.out'},0.08);
+tl.fromTo('#reveal-request',{x:0},{x:119,duration:0.65,ease:'none'},0.75);
+tl.to('#reveal-request',{opacity:0,duration:0.1},1.4);
+window.__timelines.reveal=tl;
+</script></template>

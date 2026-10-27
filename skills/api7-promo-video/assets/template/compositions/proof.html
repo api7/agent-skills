@@ -1,0 +1,39 @@
+<template>
+<style>{{STYLE}}</style>
+<div id="root" data-composition-id="proof" data-width="{{WIDTH}}" data-height="{{HEIGHT}}" data-aspect="{{ASPECT}}">
+  <h1 id="proof-title" class="headline proof-title" data-var-text="proof">{{PROOF}}</h1>
+  <div class="stage"><svg viewBox="0 0 864 430" aria-label="Allowed requests reach the upstream; excess requests stop at a configured rejection response">
+    <path class="wire" d="M150 170H714"/>
+    <path id="reject-wire" d="M432 258V340" fill="none" stroke="{{ACCENT}}" stroke-width="3"/>
+    <rect class="node" x="0" y="122" width="160" height="96" rx="12"/><text x="80" y="180" text-anchor="middle" class="label" data-var-text="leftLabel">{{LEFTLABEL}}</text>
+    <rect class="node" x="704" y="122" width="160" height="96" rx="12"/><text x="784" y="180" text-anchor="middle" class="label" data-var-text="rightLabel">{{RIGHTLABEL}}</text>
+    <rect class="gateway" x="322" y="82" width="220" height="176" rx="16"/><image href="assets/brand/{{BRAND_FILE}}" x="397" y="104" width="70" height="64"/><text x="432" y="220" text-anchor="middle" class="label" font-weight="700" data-var-text="gatewayLabel">{{GATEWAYLABEL}}</text>
+    <text x="640" y="103" text-anchor="middle" class="label" data-var-text="acceptedLabel">{{ACCEPTEDLABEL}}</text>
+    <g id="reject-result"><rect x="342" y="340" width="180" height="66" rx="9" fill="{{ACCENT}}"/><text x="432" y="384" text-anchor="middle" class="label" style="fill:white" font-weight="700" data-var-text="rejectedLabel">{{REJECTEDLABEL}}</text></g>
+    {{FLOW_PACKETS}}
+  </svg></div>
+  <p class="context" data-var-text="context">{{CONTEXT}}</p>
+  <p class="note">Illustrative flow · <span data-var-text="detail">{{DETAIL}}</span></p>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo('#proof-title',{opacity:0},{opacity:1,duration:0.22},0);
+tl.fromTo('#reject-result',{opacity:0,y:10},{opacity:1,y:0,duration:0.35,ease:'power4.out'},0.35);
+gsap.utils.toArray('.proof-allowed').forEach((el,i)=>{
+  const start=0.35+i*{{PACKET_INTERVAL}};
+  tl.fromTo(el,{opacity:0,x:0},{opacity:1,x:120,duration:0.5,ease:'none'},start);
+  tl.to(el,{opacity:0,duration:0.04},start+0.5);
+  const out=document.getElementById('proof-out-'+i);
+  tl.fromTo(out,{opacity:0,x:0},{opacity:1,x:146,duration:0.5,ease:'none'},start+0.65);
+  tl.to(out,{opacity:0,duration:0.08},start+1.15);
+});
+gsap.utils.toArray('.proof-blocked').forEach((el,i)=>{
+  const start=0.8+i*{{PACKET_INTERVAL}};
+  tl.fromTo(el,{opacity:0,x:0},{opacity:1,x:120,duration:0.4,ease:'none'},start);
+  tl.to(el,{opacity:0,duration:0.04},start+0.4);
+  const down=document.getElementById('proof-down-'+i);
+  tl.fromTo(down,{opacity:0,y:0},{opacity:1,y:60,duration:0.42,ease:'none'},start+0.55);
+  tl.to(down,{opacity:0,duration:0.08},start+0.97);
+});
+window.__timelines.proof=tl;
+</script></template>

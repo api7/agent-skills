@@ -1,0 +1,16 @@
+/* Approved authored-feed defaults; compose layout/timeline for the actual brief. */
+@font-face{font-family:Inter;src:url('assets/fonts/Inter-400.woff2');font-weight:400}
+@font-face{font-family:Inter;src:url('assets/fonts/Inter-700.woff2');font-weight:700}
+*{box-sizing:border-box}
+#root{position:absolute;inset:0;overflow:hidden;background:#FAF9FC;color:#181C20;font-family:Inter,sans-serif;font-weight:400;--accent:{{ACCENT}};--type-hero:96px;--type-title:64px;--type-body:56px;--type-meta:40px;--text-muted:#58616D}
+#root p,#root h1,#root h2{margin:0}
+.type-hero{font-size:var(--type-hero);line-height:1.2;font-weight:700;letter-spacing:-3px}
+.type-title{font-size:var(--type-title);line-height:1.2;font-weight:700;letter-spacing:-1.6px}
+.type-body{font-size:var(--type-body);line-height:1.25;font-weight:400;letter-spacing:-1px}
+.type-meta{font-size:var(--type-meta);line-height:1.2;font-weight:400;letter-spacing:-.5px}
+.feed-card{background:rgba(255,255,255,.94);border:1px solid #E7EAE8;border-radius:28px;box-shadow:0 24px 48px rgba(30,45,48,.12)}
+.feed-field{display:grid;grid-template-columns:352px 1fr;column-gap:30px;align-items:center;min-height:156px;border-bottom:1px solid #E7EAE8}
+.feed-field:last-child{border-bottom:0}
+.feed-key{color:var(--text-muted);font-weight:400}
+.feed-value{font-weight:700}
+.feed-node{display:grid;place-items:center;text-align:center}

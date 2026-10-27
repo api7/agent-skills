@@ -1,0 +1,19 @@
+<template>
+<style>{{STYLE}}</style>
+<div id="root" data-composition-id="hook" data-width="{{WIDTH}}" data-height="{{HEIGHT}}" data-aspect="{{ASPECT}}">
+  <h1 id="hook-title" class="headline" data-var-text="hook">{{HOOK}}</h1>
+  <div class="stage"><svg viewBox="0 0 864 360" aria-label="Illustrative incoming API requests">
+    <path class="wire" d="M0 155H864"/>
+    <g id="hook-packets">{{HOOK_PACKETS}}</g>
+    <text x="0" y="285" class="intro-label" data-var-text="leftLabel">{{LEFTLABEL}}</text>
+  </svg></div>
+  <p class="note">Illustrative flow</p>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo('#hook-title',{opacity:1},{opacity:1,duration:0.01},0);
+gsap.utils.toArray('#hook-packets rect').forEach((p,i)=>{
+  tl.fromTo(p,{x:-40,opacity:i<5?1:0},{x:0,opacity:1,duration:0.48,ease:'power4.out'},Math.min(i*0.09,{{DURATION}}-0.6));
+});
+window.__timelines.hook=tl;
+</script></template>

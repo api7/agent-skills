@@ -1,0 +1,53 @@
+{
+  "skill": "api7-promo-video",
+  "entries": [
+    {
+      "path": "references/creative.md",
+      "title": "Creative direction",
+      "description": "Brief, format, style and social copy",
+      "category": "production"
+    },
+    {
+      "path": "references/approved-feed-style.md",
+      "title": "Approved feed style",
+      "description": "Approved brand palette, Inter roles, card-sweep motion, information hierarchy and example timing",
+      "category": "production"
+    },
+    {
+      "path": "references/reference-fidelity.md",
+      "title": "Reference fidelity",
+      "description": "Source inspection, measured motion reconstruction and matched-frame review",
+      "category": "production"
+    },
+    {
+      "path": "references/formats.md",
+      "title": "Video types and duration",
+      "description": "Explicit length, announcement, feature, tutorial and demo planning",
+      "category": "production"
+    },
+    {
+      "path": "references/apisix.md",
+      "title": "Apache APISIX",
+      "description": "Project identity and pinned feature evidence",
+      "category": "brand"
+    },
+    {
+      "path": "references/api7.md",
+      "title": "API7",
+      "description": "Product identity, evidence and CTA selection",
+      "category": "brand"
+    },
+    {
+      "path": "references/production.md",
+      "title": "Production",
+      "description": "Scaffold, render contract and resource safety",
+      "category": "production"
+    },
+    {
+      "path": "references/acceptance.md",
+      "title": "Acceptance",
+      "description": "Visual review and verified delivery",
+      "category": "review"
+    }
+  ]
+}

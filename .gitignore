@@ -1,3 +1,11 @@
 node_modules/
 .DS_Store
 skills-lock.json
+
+# Generated promo projects and media remain local.
+local-output/
+outputs/
+renders/
+.hyperframes/
+*.mp4
+*.mov

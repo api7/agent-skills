@@ -11,6 +11,11 @@
       "title": "API7 Enterprise Edition — a7",
       "description": "Configure and operate API7 Enterprise Edition (API7 Gateway) from your coding agent through the a7 CLI. Gateway-group scoped; 29 plugins, 8 recipes, 2 personas.",
       "skills": ["a7"]
+    },
+    {
+      "title": "APISIX / API7 — Product videos",
+      "description": "Create focused short product videos with editable HyperFrames projects, covers, brief publishing copy, one CTA, and technical and asset evidence.",
+      "skills": ["api7-promo-video"]
     }
   ]
 }

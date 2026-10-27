@@ -1,0 +1,37 @@
+[
+  {
+    "path": "assets/brand/apisix.svg",
+    "source": "https://github.com/apache/apisix-website/blob/7c7aaba6f0cf1ee87a7e8217cae92b565fc2bfa7/website/static/img/logo1.svg",
+    "license": "Apache APISIX project trademark; identity use, not an Apache-2.0 trademark grant.",
+    "sha256": "58756fd192c8c866a6d6b5d077ce29f0c464f6885fbc7a6d8cd8fd0f84f6864f",
+    "changes": "None"
+  },
+  {
+    "path": "assets/brand/api7.webp",
+    "source": "https://static.api7.ai/2022/10/02/63398bceeeac7.webp",
+    "license": "API7.ai trademark; official header asset; identity use.",
+    "sha256": "da03eebc5ca0229e7cb5d116e3a24d6e396b7a359104106e6fa5cfbc3567a571",
+    "changes": "None"
+  },
+  {
+    "path": "assets/fonts/Inter-400.woff2",
+    "source": "https://github.com/heygen-com/hyperframes/tree/f5873b80892274cb4cfc063f680bbe539c396baf",
+    "license": "SIL Open Font License 1.1; see assets/fonts/OFL-inter.txt",
+    "sha256": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc",
+    "changes": "None"
+  },
+  {
+    "path": "assets/fonts/Inter-700.woff2",
+    "source": "https://github.com/heygen-com/hyperframes/tree/f5873b80892274cb4cfc063f680bbe539c396baf",
+    "license": "SIL Open Font License 1.1; see assets/fonts/OFL-inter.txt",
+    "sha256": "6f56409fd3d64bb85f7d070bce20749db2d66b6d63cec586cc22d1c761be2491",
+    "changes": "None"
+  },
+  {
+    "path": "assets/vendor/gsap.min.js",
+    "source": "https://raw.githubusercontent.com/heygen-com/hyperframes/f5873b80892274cb4cfc063f680bbe539c396baf/registry/blocks/code-slice-hero/assets/gsap-3.14.2.min.js",
+    "license": "GSAP Standard License; see assets/vendor/GSAP-NOTICE.txt",
+    "sha256": "7b2c91e3bff9022bef50054413b365a945c93f87285dcf8bdfb92076c4c56304",
+    "changes": "None"
+  }
+]

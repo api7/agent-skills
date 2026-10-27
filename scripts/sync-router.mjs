@@ -11,9 +11,10 @@
  */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { applyRouter, PRODUCTS } from './lib/router.mjs';
 
-const ROOT = new URL('..', import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const check = process.argv.includes('--check');
 let stale = 0;
 for (const cli of readdirSync(join(ROOT, 'skills'))) {

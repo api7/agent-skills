@@ -1,0 +1,4 @@
+interface:
+  display_name: "API7 Promo Video"
+  short_description: "Create product announcements, explainers, tutorials and demos"
+  default_prompt: "Use $api7-promo-video to create a product video; ask for my target duration if I have not supplied it."

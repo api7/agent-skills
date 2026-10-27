@@ -2,7 +2,7 @@
 /**
  * Repository validation (no dependencies). Run: node scripts/validate.mjs
  *
- *  1. Exactly the expected umbrella skills exist: skills/<name>/SKILL.md, name == dir.
+ *  1. Exactly the expected skills exist: skills/<name>/SKILL.md, name == dir.
  *  2. SKILL.md frontmatter: name (kebab-case, <=64), description (non-empty, <=1024).
  *  3. No SKILL.md anywhere under references/ (it would be shadowed by the CLI and
  *     re-exposed by `--full-depth`).
@@ -12,9 +12,10 @@
  */
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const EXPECTED = ['a6', 'a7'];
-const ROOT = new URL('..', import.meta.url).pathname;
+const EXPECTED = ['a6', 'a7', 'api7-promo-video'];
+const ROOT = fileURLToPath(new URL('..', import.meta.url));
 let errors = 0;
 const err = (m) => { errors++; console.error(`ERROR: ${m}`); };
 
@@ -48,13 +49,28 @@ for (const name of found) {
   if (!d) err(`${name}: empty description`);
   if (d.length > 1024) err(`${name}: description ${d.length} chars > 1024`);
   const lines = md.split('\n').length;
-  if (lines > 500) err(`${name}: SKILL.md has ${lines} lines (> 500)`);
+  if (lines >= 300) err(`${name}: SKILL.md has ${lines} lines (must be < 300)`);
+  if (!existsSync(join(dir, 'LICENSE.txt'))) err(`${name}: missing LICENSE.txt`);
 
   const files = walk(dir);
   for (const p of files) if (p !== skillFile && p.endsWith('SKILL.md')) err(`${relative(ROOT, p)}: nested SKILL.md is not allowed`);
 
-  const index = JSON.parse(readFileSync(join(dir, 'references', 'index.json'), 'utf8'));
-  const indexed = new Set(index.entries.map((e) => e.path));
+  const indexFile = join(dir, 'references', 'index.json');
+  let index;
+  try {
+    index = JSON.parse(readFileSync(indexFile, 'utf8'));
+    if (!Array.isArray(index.entries)) throw new Error('entries must be an array');
+  } catch (e) { err(`${name}: invalid references/index.json (${e.message})`); continue; }
+  const entries = index.entries.filter((e) => e && typeof e === 'object' && !Array.isArray(e));
+  if (entries.length !== index.entries.length) err(`${name}: each index entry must be an object`);
+  for (const e of entries) {
+    for (const key of ['path', 'title', 'description', 'category']) {
+      if (typeof e[key] !== 'string' || !e[key].trim()) err(`${name}: index entry needs ${key}`);
+    }
+    if (typeof e.path !== 'string' || !/^references\/(?!.*(?:^|\/)\.\.\/).+\.md$/.test(e.path)) err(`${name}: invalid reference path ${e.path}`);
+  }
+  const indexed = new Set(entries.map((e) => e.path));
+  if (indexed.size !== entries.length) err(`${name}: duplicate reference paths in index.json`);
   const refs = files.filter((p) => p.includes('/references/') && p.endsWith('.md'));
   for (const p of refs) {
     const rel = relative(dir, p);
@@ -63,7 +79,13 @@ for (const name of found) {
     const rf = fm(readFileSync(p, 'utf8'));
     if (!scalar(rf, 'title') || !scalar(rf, 'description')) err(`${rel}: reference needs title + description frontmatter`);
   }
-  for (const e of index.entries) if (!existsSync(join(dir, e.path))) err(`${name}: index.json entry ${e.path} does not exist`);
+  for (const e of entries) if (typeof e.path === 'string' && !existsSync(join(dir, e.path))) err(`${name}: index.json entry ${e.path} does not exist`);
+
+  if (name === 'api7-promo-video') {
+    for (const required of ['agents/openai.yaml', 'assets/template', 'scripts']) {
+      if (!existsSync(join(dir, required))) err(`${name}: missing ${required}`);
+    }
+  }
 
   for (const p of files.filter((x) => x.endsWith('.md'))) {
     const text = readFileSync(p, 'utf8');

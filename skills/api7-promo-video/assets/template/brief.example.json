@@ -1,0 +1,31 @@
+{
+  "product": "apisix",
+  "videoType": "feature",
+  "topic": "Request rate limiting",
+  "aspect": "square",
+  "duration": 20,
+  "language": "en",
+  "copy": {
+    "hook": "Traffic spikes.", "reveal": "Set a limit.",
+    "proof": "Control what gets through.",
+    "payoff": "Rate limiting with Apache APISIX.",
+    "cta": "Configure rate limiting",
+    "context": "One gateway · Per client IP",
+    "detail": "rejected_code: 429",
+    "leftLabel": "Requests", "gatewayLabel": "APISIX", "rightLabel": "Upstream",
+    "acceptedLabel": "Within limit", "rejectedLabel": "HTTP 429"
+  },
+  "ctaUrl": "https://apisix.apache.org/docs/apisix/plugins/limit-req/",
+  "displayUrl": "apisix.apache.org",
+  "post": "Traffic spikes can overwhelm an API. Apache APISIX lets you apply request rate limits before traffic reaches your upstream services. This illustrative flow uses a limit per client IP on one gateway instance, with excess requests explicitly configured to return HTTP 429. Configure rate limiting:",
+  "sources": [{
+    "url": "https://github.com/apache/apisix/blob/3.19.0/docs/en/latest/plugins/limit-req.md",
+    "claim": "APISIX 3.19.0 limit-req: rate 1, burst 0, remote_addr, local, rejected_code 429. Illustrative diagram; not measured output."
+  }],
+  "music": {
+    "file": "./authorized-music.wav",
+    "credit": "Replace with the actual track, author, license and edits.",
+    "source": "https://example.com/replace-with-actual-track",
+    "licenseUrl": "https://example.com/replace-with-actual-license"
+  }
+}

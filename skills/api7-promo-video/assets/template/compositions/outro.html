@@ -1,0 +1,17 @@
+<template>
+<style>{{STYLE}}</style>
+<div id="root" data-composition-id="outro" data-width="{{WIDTH}}" data-height="{{HEIGHT}}" data-aspect="{{ASPECT}}">
+  <img id="outro-mark" class="end-mark" src="assets/brand/{{BRAND_FILE}}" alt="{{BRAND_NAME}} official mark">
+  <p id="outro-name" class="end-name">{{BRAND_NAME}}</p>
+  <div id="outro-rule" class="end-rule"></div>
+  <p id="outro-cta" class="end-cta"><span data-var-text="cta">{{CTA}}</span> →</p>
+  <p class="end-domain" data-var-text="displayUrl">{{DISPLAYURL}}</p>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});
+tl.fromTo('#outro-mark',{y:18,opacity:0},{y:0,opacity:1,duration:0.45,ease:'power4.out'},0);
+tl.fromTo('#outro-name',{opacity:0},{opacity:1,duration:0.3},0.1);
+tl.fromTo('#outro-rule',{scaleX:0},{scaleX:1,duration:0.45,ease:'power4.out'},0.15);
+tl.fromTo('#outro-cta',{opacity:0},{opacity:1,duration:0.2},0.35);
+window.__timelines.outro=tl;
+</script></template>
